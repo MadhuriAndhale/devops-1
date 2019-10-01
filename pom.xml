@@ -1,4 +1,3 @@
-0828 15:51:33.333+0000 {36192} INFO  [worker-exec slot-Task:id=2993053,env=36192,type=10][c.s.c.d.run.DataExportRunner    ] The query for viewId IFP MES 07 Data Prep Data Transformation Process Log 6 and userid=747 is   SELECT  C_0_LOG_ID_ORDER,C_0_0_k2,C_0_0_k3,C_0_0_k4,C_0_0_k5,C_0_0_k6,C_0_0_k9,C_0_0_ka,C_0_LOG_DURATION,C_0_0_kb FROM (  SELECT  T_0_0.LOG_ID_ORDER C_0_LOG_ID_ORDER,T_0_0.PROCESS_TYPE C_0_0_k2,T_0_0.PROCESS_NAME C_0_0_k3,T_0_0.LOG_STATUS C_0_0_k4,T_0_0.WARNING_COUNT C_0_0_k5,T_0_0.ERROR_COUNT C_0_0_k6,T_0_0.START_DATE_TIME C_0_0_k9,T_0_0.END_DATE_TIME C_0_0_ka,T_0_0.LOG_DURATION C_0_LOG_DURATION,T_0_0.PROCESS_PREDECESSORS C_0_0_kb,T_0_0.HIDDEN_LOG C_0_HIDDEN_LOG,T_0_0.PARENT_ID C_0_PARENT_ID,T_0_0.CHILDREN_EXPANDED C_0_CHILDREN_EXPAND FROM ALL_LOG_ITEMS_V T_0_0 ) TAB  WHERE (1=1) AND (C_0_PARENT_ID = 2992085 AND UPPER(C_0_0_k4) != UPPER('-1') AND UPPER(C_0_0_k4) != UPPER('-2') AND C_0_CHILDREN_EXPAND = 1 AND C_0_HIDDEN_LOG = 0) ORDER BY NLSSORT(C_0_0_k3, 'NLS_SORT=BINARY_CI') ASC 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
@@ -33,15 +32,13 @@
   <build>
     <plugins>
       <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.5.1</version>
-            <configuration>
-                <source>1.7</source>
-                <target>1.7</target>
-            </configuration>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
       </plugin>
-	  
+
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
         <configuration>
